@@ -15,7 +15,7 @@ const theme = {
 
   font: {
     family:
-      "Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Poppins, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Poppins, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
     weight: {
       light: 300,
       regular: 400,
@@ -45,17 +45,25 @@ const theme = {
   },
 
   colors: {
-    background: "#121214",
-    elements: "#202024",
-    divider: "#323238",
-    placeholder: "#7C7C8A",
-    label: "#8D8D99",
-    text: "#C4C4CC",
-    title: "#E1E1E6",
-    white: "#FFFFFF",
-    red: "#F16165",
-    green: "#00B37E"
+    background: "#1A1A1A",
+    text: "#F2F2F2",
+
+    gray_100:  "#F2F2F2",
+    gray_200:  "#D9D9D9",
+    gray_300:  "#808080",
+    gray_400:  "#333333",
+    gray_500:  "#262626",
+    gray_600:  "#1A1A1A",
+    gray_700:  "#0D0D0D",
+    danger:  "#E25858",
+    purple: "#8284FA",
+    purple_dark: "#5E60CE",
+    blue: "#4EA8DE",
+    blue_dark: "#1E6F9F"
+
   }
 } as const;
 
 export default theme;
+
+

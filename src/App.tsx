@@ -1,12 +1,17 @@
 import { ThemeProvider } from "styled-components";
 
 import { DefaultTheme, GlobalStyles } from "@/styles";
+import { Header } from "./components/Header/index";
+import { TaskInput } from "./components/TaskInput/index";
+import { Task } from "./components/Task/index";
 
 function App() {
   return (
     <ThemeProvider theme={DefaultTheme}>
       <GlobalStyles />
-      <h1>Boilerplate</h1>
+      <Header />
+      <TaskInput />
+      <Task />
     </ThemeProvider>
   );
 }
