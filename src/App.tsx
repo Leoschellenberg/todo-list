@@ -11,7 +11,7 @@ import { Tasks } from "./types";
 
 function App() {
   const [inputTask, setInputTask] = useState("");
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks] = useState<Tasks[]>([
     {
       id: 1,
       checked: false,
@@ -41,14 +41,12 @@ function App() {
   }
 
   const handleCreateNewComment = (event: FormEvent) => {
-    event.preventDefault();
+    if (inputTask) event.preventDefault();
     const newTask = {
       id: Math.floor(Math.random() * 100),
       checked: false,
       title: inputTask
     };
-
-    //console.log(newTask);
     setTasks([...tasks, newTask]);
     setInputTask("");
   };

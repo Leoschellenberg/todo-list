@@ -110,3 +110,33 @@ export const TitleTask = styled.h2`
     }
   `}
 `;
+
+export const NoTasks = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem;
+    border-top: 1px solid #333;
+
+    .ClipboardText {
+      color: ${theme.colors.gray_400};
+    }
+  `}
+`;
+export const TextInfoNoTask = styled.h2`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    color: ${theme.colors.gray_300};
+    font-size: 1rem;
+    font-weight: ${theme.font.weight.bold};
+    text-align: center;
+
+    span {
+      font-weight: ${theme.font.weight.light};
+    }
+  `}
+`;

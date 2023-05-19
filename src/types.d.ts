@@ -12,3 +12,4 @@ export interface Tasks {
   checked: boolean;
   title: string;
 }
+[];

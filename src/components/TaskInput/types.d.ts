@@ -1,4 +1,7 @@
+import { FormEvent } from "react";
+
 export interface TypeObjInputTask {
-  setInputTask: (event) => void;
-  handleCreateNewComment: () => void;
+  setInputTask: (value: string) => void;
+  handleCreateNewComment: (event: FormEvent) => void;
+  inputTask: string;
 }

@@ -3,7 +3,7 @@ export interface TypeObjTask {
     id: number;
     checked: boolean;
     title: string;
-  };
+  }[];
   handleDeleteComment: (task: Task) => void;
   handleSetTaskFinished: (task: Task) => void;
 }
