@@ -1,17 +1,83 @@
 import { ThemeProvider } from "styled-components";
 
+import { FormEvent, useState } from "react";
+
 import { DefaultTheme, GlobalStyles } from "@/styles";
 import { Header } from "./components/Header/index";
 import { TaskInput } from "./components/TaskInput/index";
 import { Task } from "./components/Task/index";
 
+import { Tasks } from "./types";
+
 function App() {
+  const [inputTask, setInputTask] = useState("");
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      checked: false,
+      title:
+        "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
+    },
+    {
+      id: 2,
+      checked: true,
+      title:
+        "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
+    },
+    {
+      id: 3,
+      checked: true,
+      title:
+        "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
+    }
+  ]);
+
+  function handleDeleteComment(taskToDelete: Tasks) {
+    const tasksWithoutDeletedOne = tasks.filter((task) => {
+      return task.id !== taskToDelete.id;
+    });
+
+    setTasks(tasksWithoutDeletedOne);
+  }
+
+  const handleCreateNewComment = (event: FormEvent) => {
+    event.preventDefault();
+    const newTask = {
+      id: Math.floor(Math.random() * 100),
+      checked: false,
+      title: inputTask
+    };
+
+    //console.log(newTask);
+    setTasks([...tasks, newTask]);
+    setInputTask("");
+  };
+
+  function handleSetTaskFinished(taskFinished: Tasks) {
+    const tasksMarkFinished = tasks.map((task) => {
+      if (task.id === taskFinished.id) {
+        return { ...task, checked: !task.checked };
+      }
+      return task;
+    });
+
+    setTasks(tasksMarkFinished);
+  }
+
   return (
     <ThemeProvider theme={DefaultTheme}>
       <GlobalStyles />
       <Header />
-      <TaskInput />
-      <Task />
+      <TaskInput
+        setInputTask={setInputTask}
+        inputTask={inputTask}
+        handleCreateNewComment={handleCreateNewComment}
+      />
+      <Task
+        tasks={tasks}
+        handleDeleteComment={handleDeleteComment}
+        handleSetTaskFinished={handleSetTaskFinished}
+      />
     </ThemeProvider>
   );
 }
