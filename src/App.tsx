@@ -11,26 +11,7 @@ import { Tasks } from "./types";
 
 function App() {
   const [inputTask, setInputTask] = useState("");
-  const [tasks, setTasks] = useState<Tasks[]>([
-    {
-      id: 1,
-      checked: false,
-      title:
-        "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
-    },
-    {
-      id: 2,
-      checked: true,
-      title:
-        "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
-    },
-    {
-      id: 3,
-      checked: true,
-      title:
-        "Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer."
-    }
-  ]);
+  const [tasks, setTasks] = useState<Tasks[]>([]);
 
   function handleDeleteComment(taskToDelete: Tasks) {
     const tasksWithoutDeletedOne = tasks.filter((task) => {
