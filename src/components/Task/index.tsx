@@ -6,7 +6,7 @@ import {
 } from "@phosphor-icons/react";
 import * as S from "./styles";
 
-import { Task as TaskType } from "../../context/types";
+import { Task as TaskType } from "@/context/types";
 
 import { TypeObjTask } from "./types";
 
