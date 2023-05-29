@@ -6,14 +6,18 @@ import {
 } from "@phosphor-icons/react";
 import * as S from "./styles";
 
+import { Task as TaskType } from "@/context/types";
+
 import { TypeObjTask } from "./types";
 
-export const Task = ({
-  tasks,
-  handleDeleteComment,
-  handleSetTaskFinished
-}: TypeObjTask) => {
-  const countFinishedTask = tasks.reduce((total, task) => {
+import { FormContext } from "@/context/task";
+import { useContext } from "react";
+
+export const Task = () => {
+  const { tasks, handleDeleteComment, handleSetTaskFinished }: TypeObjTask =
+    useContext(FormContext);
+
+  const countFinishedTask = tasks.reduce((total: number, task: TaskType) => {
     return task.checked ? (total += 1) : total;
   }, 0);
 
