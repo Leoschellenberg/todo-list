@@ -1,15 +1,6 @@
-export interface TypeObjTask {
-  tasks: {
-    id: number;
-    checked: boolean;
-    title: string;
-  };
-  onChangeTask: (task: Task) => void;
-}
+import { Task } from "./components/Task/types";
 
-export interface Tasks {
-  id: number;
-  checked: boolean;
-  title: string;
+export interface TypeObjTask {
+  tasks: Task[];
+  onChangeTask: (task: Task[]) => void;
 }
-[];

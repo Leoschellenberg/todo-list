@@ -13,7 +13,8 @@ export default defineConfig({
       "@stories": path.resolve(__dirname, "./src/stories"),
       "@styles": path.resolve(__dirname, "./src/styles"),
       "@utils": path.resolve(__dirname, "./src/utils"),
-      "@pages": path.resolve(__dirname, "./src/pages")
+      "@pages": path.resolve(__dirname, "./src/pages"),
+      "@context": path.resolve(__dirname, "./src/context")
     }
   },
   optimizeDeps: {

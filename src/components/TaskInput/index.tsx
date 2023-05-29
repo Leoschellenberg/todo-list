@@ -1,16 +1,24 @@
 import { PlusCircle } from "@phosphor-icons/react";
 import * as S from "./styles";
 
+import { FormContext } from "@/context/task";
+import { useContext, useState } from "react";
+
 import { TypeObjInputTask } from "./types";
 
-export const TaskInput = ({
-  setInputTask,
-  handleCreateNewComment,
-  inputTask
-}: TypeObjInputTask) => {
+export const TaskInput = () => {
+  const [inputTask, setInputTask] = useState("");
+  const { handleCreateNewComment }: TypeObjInputTask = useContext(FormContext);
+
+  function handleCreate() {
+    event?.preventDefault();
+    handleCreateNewComment(inputTask);
+    setInputTask("");
+  }
+
   return (
     <S.Wrapper>
-      <S.Form onSubmit={handleCreateNewComment}>
+      <S.Form onSubmit={handleCreate}>
         <S.Input
           placeholder="Adicione uma nova tarefa"
           value={inputTask}

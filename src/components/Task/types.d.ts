@@ -1,9 +1,5 @@
 export interface TypeObjTask {
-  tasks: {
-    id: number;
-    checked: boolean;
-    title: string;
-  }[];
+  tasks: Task[];
   handleDeleteComment: (task: Task) => void;
   handleSetTaskFinished: (task: Task) => void;
 }
